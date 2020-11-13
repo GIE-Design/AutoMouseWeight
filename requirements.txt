@@ -1,0 +1,8 @@
+future==0.18.2
+HX711==0.0.0
+iso8601==0.1.13
+pkg-resources==0.0.0
+PyYAML==5.3.1
+RFIDTagReader==0.0.0
+RPi.GPIO==0.7.0
+serial==0.0.97
