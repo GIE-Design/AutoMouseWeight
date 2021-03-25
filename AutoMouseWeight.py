@@ -80,7 +80,7 @@ def main():
             jsonDict = {}
             kCAGE_NAME = input('Enter the cage name, used to distinguish data from different cages:')
             kCAGE_PATH = input ('Enter the path where data from each day will be saved:')
-            kDAYSTARTHOUR = int (input ('Enter the rollover hour, in 24 hour format, when a new data file is started:'))
+            kDAYSTARTHOUR = int (input ('Enter the rollover hour, in 24 hour format, when a new data file is started (0=midnight):'))
             kTHREADARRAYSIZE = int (input ('Enter size of array used for threaded reading from Load Cell:'))
             kMINWEIGHT = float (input ('Enter cutoff weight where we stop the thread from reading:'))
             kDATA_PIN=  int (input ('Enter number of GPIO pin connected to data pin on load cell:'))
@@ -144,7 +144,7 @@ def main():
     current date, so open a file to start with
     """
     now = datetime.fromtimestamp (int (time()))
-    startDay = datetime (now.year, now.month,now.day, kDAYSTARTHOUR,0,0)
+    startDay = datetime (now.year, now.month, now.day, kDAYSTARTHOUR, 0, 0)
     if startDay > now: # it's still "yesterday" according to kDAYSTARTHOUR definition of when a day starts
         startDay = startDay - timedelta (hours=24)
     startSecs = startDay.timestamp() # used to report time of an entry through the weighing tube
