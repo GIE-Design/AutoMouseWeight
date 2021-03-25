@@ -138,7 +138,7 @@ def main():
     an event callback when pin changes either from low-to-high, or from high-to-low.
     """
     tagReader = TagReader('/dev/' + kSERIAL_PORT, doChecksum = False, timeOutSecs = 0.05, kind='ID')
-    tagReader.installCallBack (kTIR_PIN)
+    tagReader.installCallback (kTIR_PIN)
     """
     A new binary data file is opened for each day, with a name containing the 
     current date, so open a file to start with
